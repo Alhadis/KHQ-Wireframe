@@ -1,0 +1,41 @@
+/** Icon font */
+@font-face{
+	font-family: "KHQIcons";
+	src: url("../fonts/KHQIcons/KHQIcons.eot");
+	src: url("../fonts/KHQIcons/KHQIcons.eot?#iefix") format("embedded-opentype"),
+		 url("../fonts/KHQIcons/KHQIcons.woff2") format("woff2"),
+		 url("../fonts/KHQIcons/KHQIcons.woff") format("woff"),
+		 url("../fonts/KHQIcons/KHQIcons.ttf") format("truetype"),
+		 url("../fonts/KHQIcons/KHQIcons.svg#KHQIcons") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+/** Icon alphabet, primarily meant for reference only. */
+.i.K::before				{	content: "K";		}
+.i.H::before				{	content: "H";		}
+.i.Q::before				{	content: "Q";		}
+.i.A::before				{	content: "A";		}
+.i.p::before				{	content: "p";		}
+.i.r::before				{	content: "r";		}
+.i.o::before				{	content: "o";		}
+.i.v::before				{	content: "v";		}
+.i.e::before				{	content: "e";		}
+.i.d::before				{	content: "d";		}
+.i.frame::before			{	content: "\f096";	}
+.i.triangle-left::before	{	content: "\25c0";	}
+.i.triangle-right::before	{	content: "\25b6";	}
+.i.triangle-up::before		{	content: "\25b2";	}
+.i.triangle-down::before	{	content: "\25bc";	}
+.i.slope-left::before		{	content: "\25e3";	}
+.i.slope-right::before		{	content: "\25e2";	}
+.i.tick::before				{	content: "\2713";	}
+.i.tick-heavy::before		{	content: "\2714";	}
+.i.navicon::before			{	content: "\2630";	}
+.i.seal::before				{	content: "\2742";	}
+.i.doc::before				{	content: "\2399";	}
+.i.doc-approved::before		{	content: "\1f5b9";	}
+.i.envelope::before			{	content: "\2709";	}
+.i.export::before			{	content: "\2386";	}
+.i.search::before			{	content: "\2315";	}
