@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="red">
+<html class="green">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="initial-scale=1, minimum-scale=1, user-scalable=no" />
@@ -17,13 +17,19 @@
 
 	<header class="row" id="top">
 		<h1 id="logo"><a href="#" class="khq-logo"><b class="K">K</b><b class="H">H</b><b class="Q">Q</b><span class="approved"> <b class="A">A</b><b class="p">p</b><b class="p">p</b><b class="R">r</b><b class="o">o</b><b class="v">v</b><b class="e">e</b><b class="d">d</b></span></a></h1>
-		
+
+
 		<nav id="topnav">
 			<h2 class="nonvisual">Site Navigation</h2>
 
 
-			<input class="control" type="checkbox" id="topnav-close" checked="checked" />
-			<label class="disclosure i nav" for="topnav-close">Toggle Menu</label>
+			<input class="control" type="radio" id="mode-1a" name="mode-1" checked="checked" />
+			<input class="control" type="radio" id="mode-1b" name="mode-1" />
+			<input class="control" type="radio" id="mode-1c" name="mode-1" />
+
+
+			<label class="disclosure i" for="mode-1a">Close Menu</label>
+			<label class="disclosure i nav" for="mode-1b">Open Menu</label>
 			<ul>
 				<li class="active"><a href="#">About</a></li>
 				<li><a href="#">Promotions &amp; Permits</a></li>
@@ -34,8 +40,7 @@
 
 
 			<form id="search-bar" role="search">
-				<input class="control" type="checkbox" id="search-close" checked="checked" />
-				<label class="disclosure" for="search-close"></label>
+				<label class="disclosure" for="mode-1c"></label>
 
 				<input type="search" placeholder="Search&hellip;" value="" id="s" name="s" />
 				<input type="submit" id="search-submit" value="&#x2315;" />
@@ -59,7 +64,7 @@
 			</div>
 			
 			<div class="row">
-				<ul class="columns">
+				<ul class="columns colour-text">
 					<li> interdum diam sit amet nunc molestie pretium. Curabitur auctor id nibh eu semper. Don 1</li>
 					<li> interdum diam sit amet nunc molestie pretium. Curabitur auctor id nibh eu semper. Don 2</li>
 				</ul>
@@ -93,7 +98,9 @@
 			</div>
 	
 			<div class="art row">
-				<p>Suspendisse vel placerat metus. Duis turpis nisi, dignissim in neque eu, malesuada cursus nisi. Quisque sollicitudin enim vitae dui rutrum sollicitudin. Vivamus dapibus mattis urna non luctus. Nulla viverra ligula quis viverra euismod. Donec velit purus, blandit in erat vel, aliquam facilisis metus. Nulla molestie orci vel libero tincidunt bibendum eu ac odio. Cras condimentum dignissim ante quis elementum. Vivamus adipiscing nisl vel felis consequat, eu semper sem tincidunt. Donec a gravida ipsum, in rhoncus mauris. In porta libero mauris, sit amet sodales mi bibendum id.</p>
+				<blockquote class="colour-text">
+					<p>Suspendisse vel placerat metus. Duis turpis nisi, dignissim in neque eu, malesuada cursus nisi. Quisque sollicitudin enim vitae dui rutrum sollicitudin. Vivamus dapibus mattis urna non luctus. Nulla viverra ligula quis viverra euismod. Donec velit purus, blandit in erat vel, aliquam facilisis metus. Nulla molestie orci vel libero tincidunt bibendum eu ac odio. Cras condimentum dignissim ante quis elementum. Vivamus adipiscing nisl vel felis consequat, eu semper sem tincidunt. Donec a gravida ipsum, in rhoncus mauris. In porta libero mauris, sit amet sodales mi bibendum id.</p>
+				</blockquote>
 				<p>Fusce lobortis lacus porta tellus tristique, sit amet blandit ante suscipit. Praesent at pellentesque magna. Praesent sagittis tincidunt lorem, nec tincidunt purus sodales vel. Sed ut metus augue. Cras imperdiet turpis ac lectus facilisis facilisis. Suspendisse potenti. Vestibulum pretium porta mi, nec adipiscing velit auctor consequat. Nullam non euismod felis. Donec ornare cursus est, vel cursus turpis consectetur non. Pellentesque vulputate mauris erat, in suscipit risus placerat ut. Pellentesque tristique enim id iaculis tincidunt. Fusce tellus quam, rutrum non orci iaculis, ullamcorper imperdiet elit. Etiam condimentum congue tellus elementum sollicitudin.</p>
 				<p>Suspendisse potenti. Nam ornare vitae diam ut imperdiet. Donec massa augue, luctus at pharetra id, congue vel urna. Donec vestibulum rhoncus arcu a scelerisque. Suspendisse non pharetra ipsum. Etiam id neque vitae justo lobortis consectetur sed id mi. Donec nulla lorem, congue convallis viverra in, interdum et elit. Proin cursus porta sollicitudin. Donec tellus enim, semper ultricies mauris vitae, tincidunt porta tortor.</p>
 				<p>Donec erat nunc, euismod nec metus quis, tristique dapibus odio. Ut lacus metus, luctus in lacinia ac, euismod ac nulla. Pellentesque cursus, dui ac lacinia rhoncus, est purus vulputate enim, volutpat sodales est mauris et tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent et lectus ac eros ultrices vestibulum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut eu tortor in est malesuada congue luctus non sem. Donec mattis magna justo, consectetur porta dui vulputate a.</p>
@@ -108,10 +115,6 @@
 				<p>Vivamus at tellus quam. Curabitur non libero ligula. Sed volutpat ullamcorper diam at suscipit. Vestibulum consequat est ac feugiat pulvinar. Curabitur et eros elementum arcu scelerisque suscipit eu sagittis magna. Cras at dignissim lorem. Integer vitae ligula neque. Vestibulum laoreet tempus dolor, eget pretium ligula facilisis sagittis. Donec congue egestas nisl, a iaculis dolor aliquam eu. Phasellus ac odio aliquet, commodo nisl ut, sollicitudin nibh. Suspendisse augue sapien, dignissim vel sapien in, adipiscing pharetra quam. Curabitur feugiat id nisi at sollicitudin. Ut eros nibh, scelerisque id ligula at, vehicula semper orci. In et rutrum lacus.</p>
 			</div>
 
-			<div class="art row">
-				<p>Phasellus aliquam scelerisque commodo. Pellentesque id turpis turpis. Phasellus et rutrum enim. Integer id aliquam mauris, eget facilisis est. Duis bibendum tempor velit et egestas. In ac ante sollicitudin, porta ligula sit amet, tristique metus. Nunc at pulvinar enim. Donec posuere, quam sit amet cursus accumsan, elit dolor feugiat orci, nec imperdiet turpis ligula ultrices eros.</p>
-				<p>Suspendisse quis sapien at risus lobortis bibendum. Nunc sed accumsan felis. Nullam rutrum interdum dolor tempor faucibus. Fusce non nunc augue. Proin luctus porttitor dictum. Sed pellentesque ligula vel neque lobortis sagittis. Vivamus ut laoreet metus.</p>
-			</div>
 
 
 			<footer class="art row">

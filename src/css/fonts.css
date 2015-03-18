@@ -32,7 +32,7 @@
 .i.slope-right::before		{	content: "\25e2";	}
 .i.tick::before				{	content: "\2713";	}
 .i.tick-heavy::before		{	content: "\2714";	}
-.i.navicon::before			{	content: "\2630";	}
+.i.nav::before				{	content: "\2630";	}
 .i.seal::before				{	content: "\2742";	}
 .i.doc::before				{	content: "\2399";	}
 .i.doc-approved::before		{	content: "\1f5b9";	}
