@@ -81,7 +81,6 @@ button, .btn, a.btn{
 	padding: .25em 1em;
 	font-weight: bold;
 	text-align: center;
-	min-width: 5em;
 	color: #fff;
 	border: 0;
 
@@ -103,6 +102,9 @@ textarea, select{
 	padding: .5em;
 	margin: .5em 0;
 }
+	select{
+		padding: 1em;
+	}
 
 
 

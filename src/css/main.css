@@ -292,7 +292,7 @@ html{
 			transition:			0s left step-end .3s;
 		}
 			/** If you want the search button to submit the form whenever the field's open, uncomment the following ruleset: */
-			#mode-1c:not(:checked) ~ #search-bar > .disclosure{
+			#mode-1c:checked ~ #search-bar > .disclosure{
 				left: 100%;
 			}/***/
 
@@ -308,7 +308,7 @@ html{
 			bottom:	0;
 			right:	100%;
 			height:	100%;
-			width: 11em;
+			width: 12em;
 		}
 			#s,
 			#search-submit{
@@ -426,6 +426,13 @@ html{
 			display: block;
 		}
 
+		.disclaimer{
+			text-align: center;
+			display: block;
+			max-width: 68em;
+			margin: 1em auto;
+		}
+
 
 
 /** Footer with street address and contact buttons */
@@ -438,16 +445,12 @@ html{
 	}
 
 
-	/** Dual-column street address */
+	/** Street address */
 	#bottom-address{
 		text-align: left;
 	}
-		#bottom-address > li{
-			padding-left: .7em;
-		}
 		#bottom-address > :first-child{
 			text-align: right;
-			padding-right: .7em;
 		}
 
 
@@ -472,20 +475,30 @@ html{
 		
 
 
+/*=============================================================================*
+	0.5 SMARTPHONES (< 600)
+===============================================================================*/
+@media (max-width: 37.5em){
+.columns,
+.columns > li{
+	display: block;
+}
+
+#bottom-address,
+#bottom-address > li,
+#bottom-address > :first-child{
+	text-align: center;
+}
+}
 
 
 
 /*=============================================================================*
-	1. SMARTPHONES (< 600)
+	1. SMARTPHONES/PORTRAIT TABLETS (< 704)
 ===============================================================================*/
-@media not all and (min-width: 37.5em){
+@media not all and (min-width: 44em){
 html{
 	margin-top: 4em;
-}
-
-.columns,
-.columns > li{
-	display: block;
 }
 
 
@@ -510,7 +523,7 @@ html{
 	}
 
 	#logo{
-		position: relative;
+		position: absolute;
 		z-index: 3;
 	}
 
@@ -529,10 +542,12 @@ html{
 			z-index: 3;
 			font-size: 2.5em;
 			margin: .25em;
+			opacity: .6;
 		}
 			/** Elevate the close trigger when the menu's opened so the next tap won't hit the "open" button. */
-			#mode-1b:checked ~ .disclosure.nav{
+			#mode-1b:checked ~ .nav.disclosure{
 				z-index: 2;
+				opacity: 1;
 			}
 
 
@@ -571,7 +586,7 @@ html{
 			transition:			0s step-end max-height,	.2s ease transform;
 		}
 			/** Closed state */
-			#mode-1b:checked ~ ul{
+			#mode-1b:not(:checked) ~ ul{
 				-webkit-transform:	translateY(-100%);
 				-moz-transform:		translateY(-100%);
 				-ms-transform:		translateY(-100%);
@@ -616,13 +631,25 @@ html{
 	
 	.teal #top{				background: #172a2c;				}
 	.teal #topnav > ul{		background: rgba(170,215,220,.8);	}
+	
+	
+	/** Expandable search bar */
+	#search-bar{
+		position: absolute;
+		top:	.25em;
+		right:	4em;
+		z-index: 3;
+	}
+		#search-submit{
+			font-size: 1.7em;
+		}
 }
 
 
 /*=============================================================================*
-	2. TABLETS (600+)
+	2. TABLETS/DESKTOP (704+)
 ===============================================================================*/
-@media (min-width: 37.5em){
+@media (min-width: 44em){
 
 /** Site navigation */
 #topnav{
@@ -630,9 +657,12 @@ html{
 	#topnav > .disclosure{
 		display: none;
 	}
+
 	#topnav > ul,
 	#topnav > ul > li{
-		display: inline;
+		display: inline-block;
+		vertical-align: middle;
+		margin: 0;
 	}
 		#topnav > ul > li > a{
 			display: inline-block;
@@ -651,4 +681,12 @@ html{
 				opacity: 1;
 				color: #fff;
 			}
+
+
+	/**	Expandable search bar. Still expandable. */
+	#search-bar{
+		margin: .25em 0;
+		padding: 0 .5em;
+		height: 2.5em;
+	}
 }
