@@ -29,6 +29,7 @@ html{
 
 /** Pricing chart */
 .pricing > li{
+	text-align: left;
 	background: rgba(255,255,255,.59);
 	border: 1px solid rgba(147,149,152,.2); /* #939598, 20% opacity */
 	margin: .25em;
@@ -97,6 +98,7 @@ html{
 	max-width: 62.5em;
 	margin-left: auto;
 	margin-right: auto;
+	text-align: center;
 	padding: 1em;
 }
 
@@ -250,6 +252,7 @@ html{
 	height: 0;
 	padding-top: 0;
 	padding-bottom: 0;
+	text-align: left;
 }
 	#top a:hover{
 		text-decoration: none;
@@ -370,6 +373,18 @@ html{
 		vertical-align: top;
 	}
 
+
+	#wp-content .rotator{
+		font-size: 5em;
+	}
+		#wp-content h3 + .rotator{
+			margin-top: -.15em;
+		}
+		#wp-content .rotator img{
+			vertical-align: 18%;
+		}
+
+
 	.masthead-image{
 		display: block;
 	}
@@ -381,6 +396,7 @@ html{
 		left:	0;
 		margin:	2em;
 		font-size: 1.2em;
+		text-align: left;
 	}
 		.masthead-text > h2{
 			font-size: 3em;
@@ -400,6 +416,7 @@ html{
 		margin-left: auto;
 		margin-right: auto;
 		max-width: 36em;
+		text-align: left;
 	}
 		#wp-content form ul,
 		#wp-content form ul > li{
@@ -427,7 +444,6 @@ html{
 		}
 
 		.disclaimer{
-			text-align: center;
 			display: block;
 			max-width: 68em;
 			margin: 1em auto;
@@ -645,6 +661,15 @@ html{
 		}
 }
 
+
+/*=============================================================================*
+	1.5 TWEAKPOINT: TABLETS (600+)
+===============================================================================*/
+@media (min-width: 37.5em){
+	#wp-content .rotator > .n::after{
+		text-align: center;
+	}
+}
 
 /*=============================================================================*
 	2. TABLETS/DESKTOP (704+)

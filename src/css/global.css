@@ -104,6 +104,7 @@ textarea, select{
 }
 	select{
 		padding: 1em;
+		height: 2.125em;
 	}
 
 
@@ -315,6 +316,100 @@ textarea, select{
 	transition:			.3s ease max-height;
 }
 
+
+
+/** Basic rotating banner. */
+.rotator{
+	display: inline-block;
+	vertical-align: middle;
+	position: relative;
+	margin: .143em auto;
+	font-size: 3.5em;
+	max-width: 100%;
+	width:	6.12em;
+	height:	1em;
+}
+	.rotator,
+	.rotator > .n{
+		-webkit-transition:	.3s ease all;
+		-moz-transition:	.3s ease all;
+		-o-transition:		.3s ease all;
+		transition:			.3s ease all;
+	}
+
+	/** Navigation controls */
+	.rotator > .n{
+		position: absolute;
+		display: block;
+		text-align: left;
+		text-indent: -999em;
+		cursor: pointer;
+		z-index: 10;
+		bottom:	0;
+		top:	0;
+		width:	1em;
+		height:	1em;
+		opacity: .25;
+
+		-webkit-user-select:	none;
+		-moz-user-select:		none;
+		-ms-user-select:		none;
+		user-select:			none;
+	}
+		.rotator > .n:hover{
+			opacity: 1;
+		}
+		.rotator > .n::after{
+			display: block;
+			position: absolute;
+			top:	50%;
+			right:	0;
+			left:	0;
+			margin: -.5em .2em 0;
+			font: .4em KHQIcons;
+			text-indent: 0;
+		}
+		.rotator > .prev{	right:	100%;	}
+		.rotator > .next{	left:	100%;	}
+		.rotator > .next::after{	content: "\25b6"; }
+		.rotator > .prev::after{
+			content: "\25c0";
+			text-align: right;
+		}
+
+	.rotator > ul{
+		display: block;
+		position: relative;
+		overflow: hidden;
+		list-style: none;
+		padding: 0;
+		margin: 0 auto;
+		width:	100%;
+		height:	100%;
+	}
+		.rotator > ul > li{
+			position: absolute;
+			padding: 0;
+			margin:  0;
+			opacity: 0;
+			top:	0;
+			left:	0;
+			bottom:	0;
+			right:	0;
+
+			-webkit-transition:	.8s ease opacity;
+			-moz-transition:	.8s ease opacity;
+			-o-transition:		.8s ease opacity;
+			transition:			.8s ease opacity;
+		}
+			.rotator > ul > li > img{
+				max-width: 100%;
+				max-height: 100%;
+			}
+
+		.rotator > ul > .active{
+			opacity: 1;
+		}
 
 
 
