@@ -15,10 +15,11 @@ html{
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content:	center;
-	align-content:		center;
+	align-content:		flex-start;
 	align-items:		flex-start;
 }
 	.columns > li{
+		flex: 0 1 auto;
 		display: table-cell;
 		vertical-align: top;
 		padding: 1em;
@@ -26,6 +27,65 @@ html{
 	}
 
 
+
+/** Pricing chart */
+.pricing > li{
+	background: rgba(255,255,255,.59);
+	border: 1px solid rgba(147,149,152,.2); /* #939598, 20% opacity */
+	border-radius: .25em;
+	margin: .25em;
+	padding: 0;
+
+	align-content: stretch;
+	min-height: 100%;
+	overflow: hidden;
+}
+	/** Top of column */
+	.pricing > li > .top{
+		text-align: center;
+		margin: 0;
+		padding: .5em 0;
+		font-size: .8em;
+	}
+		.pricing > li > .top::first-line{
+			font-size: 1.2em;
+		}
+		/** Enlarged price */
+		.top > .price{
+			font-size: 3em;
+			line-height: 1;
+			display: block;
+		}
+			/** Shrink the dollar sign */
+			.top > .price::first-letter{
+				display: inline-block;
+				vertical-align: baseline;
+				font-size: .75em;
+			}
+
+		/** Shade the background of the active column's head. */
+		.pricing > li > .active.top{
+			background: #e3653f;
+			color: #fff;
+		}
+
+
+
+	/** Bullet-points */
+	.pricing > li > ul,
+	.pricing > li > ul > li{
+		border: 0 solid;
+		border-color: inherit;
+		list-style: none;
+		margin: 0;
+	}
+	.pricing > li > ul{
+		padding: 0;
+	}
+		.pricing > li > ul > li{
+			padding: .5em;
+			border-top-width: 1px;
+		}
 
 
 
@@ -312,6 +372,9 @@ html{
 			margin: .7em 0 0;
 		}
 
+	#our-prices{
+		height: 30em;
+	}
 
 
 /*=============================================================================*
