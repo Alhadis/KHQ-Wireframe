@@ -23,7 +23,6 @@ html{
 		display: table-cell;
 		vertical-align: top;
 		padding: 1em;
-		max-width: 15em;
 	}
 
 
@@ -32,11 +31,12 @@ html{
 .pricing > li{
 	background: rgba(255,255,255,.59);
 	border: 1px solid rgba(147,149,152,.2); /* #939598, 20% opacity */
-	border-radius: .25em;
 	margin: .25em;
 	padding: 0;
 
-	align-content: stretch;
+	-webkit-border-radius:	.25em;
+	-moz-border-radius:		.25em;
+	border-radius:			.25em;
 	min-height: 100%;
 	overflow: hidden;
 }
@@ -55,6 +55,7 @@ html{
 			font-size: 3em;
 			line-height: 1;
 			display: block;
+			text-indent: -.25em;
 		}
 			/** Shrink the dollar sign */
 			.top > .price::first-letter{
@@ -64,10 +65,11 @@ html{
 			}
 
 		/** Shade the background of the active column's head. */
-		.pricing > li > .active.top{
+		.active.top{
 			background: #e3653f;
 			color: #fff;
 		}
+
 
 
 
@@ -89,27 +91,35 @@ html{
 
 
 
+
 /** Centred columns ("Bootstrap vomit") */
 .row{
-	max-width: 45em;
+	max-width: 62.5em;
 	margin-left: auto;
 	margin-right: auto;
 	padding: 1em;
 }
 
+
+
+
 /** Rows with jagged, colourful backgrounds */
 .art{
 	position: relative;
 	padding: 1em;
-	color: #fff;
-
-	-webkit-background-size:	100% 100%;
-	-khtml-background-size:		100% 100%;
-	-moz-background-size:		100% 100%;
-	-ms-background-size:		100% 100%;
-	-o-background-size:			100% 100%;
-	background-size:			100% 100%;
 }
+	/** Buttons and "art-rows" share some basic stying properties, so we'll assign them using the same ruleset. */
+	.btn, button, input[type="button"], input[type="submit"], input[type="reset"],
+	.art{
+		color: #fff;
+		-webkit-background-size:	100% 100%;
+		-khtml-background-size:		100% 100%;
+		-moz-background-size:		100% 100%;
+		-ms-background-size:		100% 100%;
+		-o-background-size:			100% 100%;
+		background-size:			100% 100%;
+	}
+
 	/** Filler */
 	.art::before,
 	.art::after{
@@ -136,6 +146,12 @@ html{
 	.purple .art		{	background-image: url("../img/shards-purple.svg");	}
 	.purple .art::before{	background: #1f1735;	}
 	.purple .art::after	{	background: #634871;	}
+	
+	.btn, button, input[type="button"], input[type="submit"], input[type="reset"],
+	.teal .art			{	background-image: url("../img/shards-teal.svg");	}
+	.teal .art::before	{	background: #549ca1;	}
+	.teal .art::after	{	background: #63b9bf;	}
+
 
 
 	/** Washed-out variant of the usual "shard layers". */
@@ -146,6 +162,7 @@ html{
 	.green	.faded.art	{	background-color: #dfe3e3;	background-image: url("../img/shards-faded-green.jpg");		}
 	.red	.faded.art	{	background-color: #e7e4dc;	background-image: url("../img/shards-faded-red.jpg");		}
 	.purple	.faded.art	{	background-color: #eae7ea;	background-image: url("../img/shards-faded-purple.jpg");	}
+	.teal	.faded.art	{	background-color: #e3e9e7;	background-image: url("../img/shards-faded-teal.jpg");		}
 
 
 
@@ -163,6 +180,7 @@ html{
 		.green.masthead::before		{	background: #102016;	}	.green.masthead::after		{	background: #527c3b;	}
 		.red.masthead::before		{	background:	#a54235;	}	.red.masthead::after		{	background:	#a54235;	}
 		.purple.masthead::before	{	background: #634672;	}	.purple.masthead::after		{	background: #634672;	}
+
 
 
 /** Enhances the usual vector icons with a circled border and adds thematic shading */
@@ -214,12 +232,14 @@ html{
 	.green	.stamp	{	color: #005e2d; border-color: #005e2d;	} 
 	.red	.stamp	{	color: #923921;	border-color: #923921;	}
 	.purple	.stamp	{	color: #683e93;	border-color: #683e93;	}
+	.teal	.stamp	{	color: #51979c;	border-color: #51979c;	}
 
 
 /** Shades text using the page's current colour scheme */
-.green		.colour-text	{	color: #99ca3c;	}
-.red		.colour-text	{	color: #e4ae55;	}
-.purple		.colour-text	{	color: #d19ac0;	}
+.green		.colour-text,	.green	#topnav > ul > li.active	{	color: #99ca3c;	}
+.red		.colour-text,	.red	#topnav > ul > li.active	{	color: #e4ae55;	}
+.purple		.colour-text,	.purple	#topnav > ul > li.active	{	color: #d19ac0;	}
+.teal		.colour-text,	.teal	#topnav > ul > li.active	{	color: #e3e9e7;	}
 
 
 /** Running header spanning page's top-most edge. */
@@ -349,10 +369,11 @@ html{
 		max-width: 100%;
 		vertical-align: top;
 	}
+
 	.masthead-image{
 		display: block;
 	}
-	
+
 	/** Huge text anchored to bottom-left corner of masthead */
 	.masthead-text{
 		position: absolute;
@@ -372,9 +393,86 @@ html{
 			margin: .7em 0 0;
 		}
 
-	#our-prices{
-		height: 30em;
+
+
+	/** HubSpot forms/WPCF7/etc */
+	#wp-content form{
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 36em;
 	}
+		#wp-content form ul,
+		#wp-content form ul > li{
+			list-style: none;
+			padding: 0;
+			margin: 0 .5em;
+		}
+
+		#wp-content form label{
+			padding: .5em 0;
+			display: inline-block;
+		}
+		#wp-content input[type="checkbox"]{
+			margin-right: 1em;
+		}
+		
+		#wp-content input[type="submit"]{
+			font-size: 1.3em;
+			max-width: 20em;
+			margin: 1em auto;
+			padding: .5em 1em;
+			width: 100%;
+			text-transform: lowercase;
+			display: block;
+		}
+
+
+
+/** Footer with street address and contact buttons */
+#bottom{
+	text-align: center;
+}
+	#bottom > .khq-logo{
+		margin-top: .5em;
+		margin-left: 2em;
+	}
+
+
+	/** Dual-column street address */
+	#bottom-address{
+		text-align: left;
+	}
+		#bottom-address > li{
+			padding-left: .7em;
+		}
+		#bottom-address > :first-child{
+			text-align: right;
+			padding-right: .7em;
+		}
+
+
+	/** Miscellaneous links drifting within the footer */
+	#bottom-links a{
+		font-weight: bold;
+		text-decoration: none;
+		text-transform: uppercase;
+		border-bottom: .15em solid;
+		border-bottom-color: inherit;
+		padding: 0 1em;
+
+		-webkit-transition:	.15s ease all;
+		-moz-transition:	.15s ease all;
+		-o-transition:		.15s ease all;
+		transition:			.15s ease all;
+	}
+		#bottom-links a:not(:hover){
+			color: #fff;
+			border-color: #fff;
+		}
+		
+
+
+
 
 
 /*=============================================================================*
@@ -384,6 +482,13 @@ html{
 html{
 	margin-top: 4em;
 }
+
+.columns,
+.columns > li{
+	display: block;
+}
+
+
 #top{
 	position: fixed;
 	top:	0;
@@ -478,15 +583,26 @@ html{
 				-o-transition-delay:		.2s, 0s;
 				transition-delay:			.2s, 0s;
 			}
-			
+
+
 			/** Actual blocky-links */
-			#topnav > ul > li > a{
-				display: block;
-				padding: .7em 1em;
+			#topnav > ul > li{
 			}
-				#topnav > ul > li > a:hover{
-					background-color: rgba(45,224,117,.2);
+				/** Nice, tappable links.
+				 * 	Colour of active section assigned by shared .colour-text rule. */
+				#topnav > ul > li > a{
+					display: block;
+					padding: .7em 1em;
 				}
+					#topnav > ul > li > a:hover{
+						color: inherit;
+						background-color: rgba(45,224,117,.2);
+					}
+
+					#topnav > ul > .active > a{
+						font-weight: bold;
+					}
+
 
 	/** Menu colour variations */
 	.green #top{			background: #001408;			}
@@ -497,6 +613,9 @@ html{
 	
 	.purple #top{			background: #19132b;			}
 	.purple #topnav > ul{	background: rgba(25,20,43,.8);	}
+	
+	.teal #top{				background: #172a2c;				}
+	.teal #topnav > ul{		background: rgba(170,215,220,.8);	}
 }
 
 
@@ -504,31 +623,32 @@ html{
 	2. TABLETS (600+)
 ===============================================================================*/
 @media (min-width: 37.5em){
-	
-	/** Site navigation */
-	#topnav{
-	}
-		#topnav > .disclosure{
-			display: none;
-		}
-		#topnav > ul,
-		#topnav > ul > li{
-			display: inline;
-		}
-			#topnav > ul > li > a{
-				display: inline-block;
-				vertical-align: middle;
-				font-weight: bold;
-				padding: .5em;
-				opacity: .6;
 
-				-webkit-transition:	.3s ease opacity;
-				-moz-transition:	.3s ease opacity;
-				-o-transition:		.3s ease opacity;
-				transition:			.3s ease opacity;
+/** Site navigation */
+#topnav{
+}
+	#topnav > .disclosure{
+		display: none;
+	}
+	#topnav > ul,
+	#topnav > ul > li{
+		display: inline;
+	}
+		#topnav > ul > li > a{
+			display: inline-block;
+			vertical-align: middle;
+			font-weight: bold;
+			padding: .5em;
+			opacity: .6;
+
+			-webkit-transition:	.3s ease opacity;
+			-moz-transition:	.3s ease opacity;
+			-o-transition:		.3s ease opacity;
+			transition:			.3s ease opacity;
+		}
+			#topnav > ul > .active > a,
+			#topnav > ul > li > a:hover{
+				opacity: 1;
+				color: #fff;
 			}
-				#topnav > ul > .active > a,
-				#topnav > ul > li > a:hover{
-					opacity: 1;
-				}
 }

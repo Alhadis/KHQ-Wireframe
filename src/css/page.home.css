@@ -1,0 +1,60 @@
+/** Home/About Page */
+#our-prices{	
+}
+	#our-prices .btn{
+		display: block;
+		margin: 1em auto;
+		max-width: 8em;
+		white-space: nowrap;
+		font-size: 1.25em;
+	}
+
+
+
+
+/*=============================================================================*
+	1. SMARTPHONES (< 600)
+===============================================================================*/
+@media not all and (min-width: 37.5em){
+
+#our-prices{
+}
+	#our-prices > li{
+		margin: 0;
+	}
+		#our-prices > :first-child ~ li{
+			margin: 1em 0;
+		}
+		#our-prices > li > ul > li{
+			padding-left:	1.3em;
+			padding-right:	1.3em;
+		}
+		#our-prices .btn{
+			max-width: none;
+			margin-left: 1em;
+			margin-right: 1em;
+			padding: .7em;
+		}
+			.active.top + ul > :first-child{
+				border-top: 0;
+				padding-top: 1em;
+			}
+}
+
+
+/*=============================================================================*
+	2. TABLETS (600+)
+===============================================================================*/
+@media (min-width: 37.5em){
+#our-prices > li{
+	width: 33%;
+	margin-top: 0;
+}
+	#our-prices > li > ul{
+		height: 23em;
+		position: relative;
+	}	
+}
+
+
+

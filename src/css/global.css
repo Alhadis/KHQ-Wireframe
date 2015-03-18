@@ -76,7 +76,18 @@ input[type="button"],
 input[type="submit"],
 input[type="reset"],
 button, .btn, a.btn{
-	
+	display: inline-block;
+	vertical-align: middle;
+	padding: .25em 1em;
+	font-weight: bold;
+	text-align: center;
+	min-width: 5em;
+	color: #fff;
+	border: 0;
+
+	-webkit-border-radius:	.15em;
+	-moz-border-radius:		.15em;
+	border-radius:			.15em;
 }
 
 input[type="text"],
@@ -85,9 +96,15 @@ input[type="search"],
 input[type="tel"],
 input[type="url"],
 input[type="email"],
-textarea{
-
+textarea, select{
+	width: 100%;
+	background: #f4f4f4;
+	border: 0;
+	padding: .5em;
+	margin: .5em 0;
 }
+
+
 
 
 /*=============================================================================*
