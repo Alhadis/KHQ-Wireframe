@@ -11,7 +11,38 @@ html{
 	margin: 0 auto 1em;
 	display: table;
 
-	/** Flexbox rules for browsers that can handle it. */
+
+	/** Flexbox rules for browsers that can handle it. We'll start with the legacy mess: */
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -moz-box;
+	display: -webkit-flex;
+	
+	-webkit-box-direction:		normal;
+	-moz-box-direction:			normal;
+	-webkit-box-orient:			horizontal;
+	-moz-box-orient:			horizontal;
+
+	-webkit-flex-direction:		row;
+	-ms-flex-direction:			row;
+	
+	-webkit-flex-wrap:			nowrap;
+	-ms-flex-wrap:				nowrap;
+
+	-webkit-box-pack:			center;
+	-moz-box-pack:				center;
+	-ms-flex-pack:				center;
+	-webkit-justify-content:	center;
+
+	-webkit-box-align:			start;
+	-moz-box-align:				start;
+	-ms-flex-align:				start;
+	-webkit-align-content:		flex-start;
+	-webkit-align-items:		flex-start;
+	-ms-flex-line-pack:			start;
+
+
+	/** Okay, now for the bright, sunny future we're all looking forward to: */
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content:	center;
@@ -19,11 +50,25 @@ html{
 	align-items:		flex-start;
 }
 	.columns > li{
-		flex: 0 1 auto;
 		display: table-cell;
+
+		/** Flexbox, please. */
+		-webkit-box-flex:	0;
+		-moz-box-flex:		0;
+		-webkit-flex:		0 1 auto;
+		-ms-flex:			0 1 auto;
+		flex:				0 1 auto;
+
+		-ms-flex-item-align:	auto;
+		-webkit-align-self:		auto;
+		align-self:				auto;
+
+		flex: 0 1 auto;
 		vertical-align: top;
 		padding: 1em;
 	}
+
+
 
 
 

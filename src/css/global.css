@@ -95,7 +95,7 @@ input[type="search"],
 input[type="tel"],
 input[type="url"],
 input[type="email"],
-textarea, select{
+textarea{
 	width: 100%;
 	background: #f4f4f4;
 	border: 0;
@@ -103,9 +103,18 @@ textarea, select{
 	margin: .5em 0;
 }
 	select{
-		padding: 1em;
+		width: 100%;
+		border: 0;
+		padding: 0 .5em;
 		height: 2.125em;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		border-radius: 0;
+		background: #f4f4f4 no-repeat 100% 50% url("data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjMycHgiIGhlaWdodD0iMTNweCIgdmlld0JveD0iMCAwIDMyIDEzIj48cG9seWdvbiBmaWxsPSIjNWFhOGFlIiBwb2ludHM9IjI2LDAgMTMsMTMgMCwwIi8+PC9zdmc+");
 	}
+		select:focus{
+			outline: none;
+		}
 
 
 
