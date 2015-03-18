@@ -4,6 +4,7 @@ html{
 }
 
 
+/** Floating columns of flexible-ish, centred content */
 .columns{
 	list-style: none;
 	padding: 0;
@@ -15,15 +16,15 @@ html{
 	flex-flow: row nowrap;
 	justify-content:	center;
 	align-content:		center;
-	align-items:		center;
+	align-items:		flex-start;
 }
 	.columns > li{
 		display: table-cell;
 		vertical-align: top;
 		padding: 1em;
-		outline: 1px solid red;
 		max-width: 15em;
 	}
+
 
 
 
@@ -103,6 +104,56 @@ html{
 		.red.masthead::before		{	background:	#a54235;	}	.red.masthead::after		{	background:	#a54235;	}
 		.purple.masthead::before	{	background: #634672;	}	.purple.masthead::after		{	background: #634672;	}
 
+
+/** Enhances the usual vector icons with a circled border and adds thematic shading */
+.stamp{
+	display: block;
+	border-style: solid;
+	font-size: 3em;
+	border-style: solid;
+	border-width: .14em;
+	width:	1.8em;
+	height:	1.8em;
+	line-height: 1.65;
+	margin: 0 auto .4em;
+
+	-webkit-border-radius:	50%;
+	-moz-border-radius:		50%;
+	border-radius:			50%;
+}
+	.envelope.stamp::before{
+		font-size: .8em;
+		line-height: 2;
+	}
+	.cash.stamp::before{
+		content: "$";
+		font: 1.4em/1.1 "Archivo Narrow";
+	}
+
+	.granted.stamp::before{
+		content: "GRANTED";
+		position: absolute;
+		font: bold .35em/1.2 "Archivo Narrow";
+		text-indent: 0;
+		text-align: center;
+		top:	50%;
+		left:	0;
+		right:	0;
+		bottom: auto;
+		margin-top: -.75em;
+		overflow: hidden;
+		z-index: -1;
+
+		border-style: solid;
+		border-width: .25em 0;
+		border-color: inherit;
+	}
+
+
+	/** Stamp colour variations */
+	.green	.stamp	{	color: #005e2d; border-color: #005e2d;	} 
+	.red	.stamp	{	color: #923921;	border-color: #923921;	}
+	.purple	.stamp	{	color: #683e93;	border-color: #683e93;	}
 
 
 /** Shades text using the page's current colour scheme */
@@ -241,6 +292,25 @@ html{
 	.masthead-image{
 		display: block;
 	}
+	
+	/** Huge text anchored to bottom-left corner of masthead */
+	.masthead-text{
+		position: absolute;
+		bottom:	0;
+		left:	0;
+		margin:	2em;
+		font-size: 1.2em;
+	}
+		.masthead-text > h2{
+			font-size: 3em;
+			line-height: 1;
+			text-transform: uppercase;
+			white-space: pre-line;
+		}
+		
+		.masthead-text > p{
+			margin: .7em 0 0;
+		}
 
 
 
